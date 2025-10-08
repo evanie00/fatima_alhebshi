@@ -4,30 +4,15 @@ void main() {
   runApp(const MyApp());
 }
 
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
@@ -40,16 +25,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -57,40 +32,221 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
+  int counter1 = 0;
+  void update_counter1() {
     setState(() {
-      _counter++;
+      counter1++;
+    });
+  }
+  int counter2 = 0;
+  void update_counter2() {
+    setState(() {
+      counter2++;
+    });
+  }
+  int counter3 = 0;
+  void update_counter3() {
+    setState(() {
+      counter3++;
+    });
+  }
+  int counter4 = 0;
+  void update_counter4() {
+    setState(() {
+      counter4++;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFF5EEDC),
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+        toolbarHeight: 80,
+        backgroundColor: Color(0xFFC2A68C),
+        title: Row(
+          children: [
+            Container(
+              width: 50,
+              height: 50,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: Colors.transparent,
+                  width: 50,
+                ),
+                image: DecorationImage(
+                  image: AssetImage('assets/images/img1.png'),
+                ),
+              ),
             ),
+            SizedBox(width: 10),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              "مسبحة",
+              style: TextStyle(
+                fontFamily: 'Africa',
+                fontSize: 30,
+                color:  Color(0xFF344F1F),
+                fontWeight: FontWeight.bold,
+              ),
             ),
+            SizedBox(width: 10),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: Padding(
+        padding: EdgeInsets.only(top: 80,right: 20, left: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            ElevatedButton(
+                onPressed: update_counter1,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF5D866C),
+                  elevation: 8,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(35),
+                  ),
+                  padding: EdgeInsets.all(25)
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                        "$counter1",
+                        style: TextStyle(
+                        fontSize: 25,
+                        color:  Color(0xFFF5EEDC),
+                        ),
+                    ),
+                    Text(
+                      "سبحان اللَّه",
+                      style: TextStyle(
+                        fontFamily: 'Africa',
+                        fontSize: 30,
+                        color:  Color(0xFFF5EEDC),
+                      ),
+                    ),
+                  ]
+                )
+            ),
+            SizedBox(height: 25,),
+            ElevatedButton(
+                onPressed: update_counter2,
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF5D866C),
+                    elevation: 8,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(35),
+                    ),
+                    padding: EdgeInsets.all(25)
+                ),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "$counter2",
+                        style: TextStyle(
+                          fontSize: 25,
+                          color:  Color(0xFFF5EEDC),
+                        ),
+                      ),
+                      Text(
+                        "الحمدللَّه",
+                        style: TextStyle(
+                          fontFamily: 'Africa',
+                          fontSize: 30,
+                          color:  Color(0xFFF5EEDC),
+                        ),
+                      ),
+                    ]
+                )
+            ),
+            SizedBox(height: 25,),
+            ElevatedButton(
+                onPressed: update_counter3,
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF5D866C),
+                    elevation: 8,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(35),
+                    ),
+                    padding: EdgeInsets.all(25)
+                ),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "$counter3",
+                        style: TextStyle(
+                          fontSize: 25,
+                          color:  Color(0xFFF5EEDC),
+                        ),
+                      ),
+                      Text(
+                        "لا إله إلا اللَّه",
+                        style: TextStyle(
+                          fontFamily: 'Africa',
+                          fontSize: 30,
+                          color:  Color(0xFFF5EEDC),
+                        ),
+                      ),
+                    ]
+                )
+            ),
+            SizedBox(height: 25,),
+            ElevatedButton(
+                onPressed: update_counter4,
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF5D866C),
+                    elevation: 8,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(35),
+                    ),
+                    padding: EdgeInsets.all(25)
+                ),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "$counter4",
+                        style: TextStyle(
+                          fontSize: 25,
+                          color:  Color(0xFFF5EEDC),
+                        ),
+                      ),
+                      Text(
+                        "اللَّه أكبر",
+                        style: TextStyle(
+                          fontFamily: 'Africa',
+                          fontSize: 30,
+                          color:  Color(0xFFF5EEDC),
+                        ),
+                      ),
+                    ]
+                )
+            ),
+            SizedBox(height: 80,),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  counter4 = 0;
+                  counter3 = 0;
+                  counter1 = 0;
+                  counter2 = 0;
+                });
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFC2A68C),
+                shape: CircleBorder(),
+                elevation: 5,
+                padding: EdgeInsets.all(55),
+              ),
+              child: SizedBox.shrink(),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
