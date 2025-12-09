@@ -44,23 +44,44 @@ class ProfileScreen extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 20),
-                CircleAvatar(
-                  radius: 60,
-                  backgroundImage: AssetImage('assets/images/images.jpeg'),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  'Fatima Al-Hebshi',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Poppins',
-                  ),
-                ),
-                const SizedBox(height: 5),
-                const Text(
-                  'Software Engineer',
-                  style: TextStyle(fontSize: 18),
+                Stack(
+                  alignment: Alignment.topCenter,
+                  children: [
+                    Container(
+                      height: 230,
+                      width: 370,
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 248, 214, 231),
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(40),
+                        ),
+                      ),
+                    ),
+
+                    Column(
+                      children: const [
+                        SizedBox(height: 20),
+                        CircleAvatar(
+                          radius: 60,
+                          backgroundImage: AssetImage('assets/images/images.jpeg'),
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          'Fatima Al-Hebshi',
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Poppins',
+                          ),
+                        ),
+                        SizedBox(height: 5),
+                        Text(
+                          'Software Engineer',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 5),
                 const Text(
